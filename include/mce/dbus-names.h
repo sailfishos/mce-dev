@@ -241,6 +241,19 @@
  */
 #define MCE_CALL_STATE_CHANGE_REQ	"req_call_state_change"
 
+/** Inform mce that incoming call has been ignored by ui
+ *
+ * When there is an incoming call, mce reserves the power key
+ * for silencing the ringing tone.
+ *
+ * This method can be used by the call ui to inform mce that the
+ * call has been ignored and power key can be used for display
+ * power control even though there are calls in ringing state.
+ *
+ * @since v1.19.0
+ */
+#define MCE_IGNORE_INCOMING_CALL_REQ	"req_ignore_incoming_call"
+
 /**
  * Unblank display
  *
@@ -592,7 +605,6 @@
  * @param val Config value as DBUS_TYPE_VARIANT
  */
 #define MCE_CONFIG_CHANGE_SIG		"config_change_ind"
-
 
 /*@}*/
 
