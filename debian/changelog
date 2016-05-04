@@ -1,3 +1,9 @@
+mce-dev (1.19.0) unstable; urgency=low
+
+  * [powerkey] Add method for ignoring incoming call. JB#20728
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Wed, 04 May 2016 12:54:34 +0300
+
 mce-dev (1.18.0) unstable; urgency=low
 
   * [powerkey] Add constants for powerkey events. Fixes MER#1310
