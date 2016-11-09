@@ -474,6 +474,18 @@
  */
 #define MCE_CONFIG_GET	"get_config"
 
+/** Query all configuration values
+ *
+ * Get array of (key,value) pairs for all runtime changeable settings
+ * that mce supports.
+ *
+ * @since v1.83.0
+ *
+ * @return ARRAY(DICT_ENTRY(STRING, VARIANT)), or
+ *         error reply
+ */
+#define MCE_CONFIG_GET_ALL	"get_config_all"
+
 /** Set configuration value
  *
  * @since v1.12.15
