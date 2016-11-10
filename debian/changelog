@@ -1,3 +1,9 @@
+mce-dev (1.20.0) unstable; urgency=low
+
+  * [mce] Add method call for getting all mce settings. JB#34813
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Thu, 10 Nov 2016 08:27:14 +0200
+
 mce-dev (1.19.0) unstable; urgency=low
 
   * [powerkey] Add method for ignoring incoming call. JB#20728
