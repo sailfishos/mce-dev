@@ -1,3 +1,9 @@
+mce-dev (1.21.0) unstable; urgency=low
+
+  * [mce] Expose battery/charging data on D-Bus. Contributes to JB#37422
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Mon, 23 Jan 2017 11:58:37 +0200
+
 mce-dev (1.20.0) unstable; urgency=low
 
   * [mce] Add method call for getting all mce settings. JB#34813
