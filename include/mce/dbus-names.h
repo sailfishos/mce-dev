@@ -510,6 +510,58 @@
  * @return Number of changed settings as DBUS_TYPE_INT32; -1 on failure
  */
 #define MCE_CONFIG_RESET "reset_config"
+
+/** Query current USB cable state
+ *
+ * Possible return values are:
+ * - #MCE_USB_CABLE_STATE_UNKNOWN
+ * - #MCE_USB_CABLE_STATE_CONNECTED
+ * - #MCE_USB_CABLE_STATE_DISCONNECTED
+ *
+ * @since v1.86.0
+ *
+ * @return USB cable connection state as DBUS_TYPE_STRING
+ */
+#define MCE_USB_CABLE_STATE_GET         "get_usb_cable_state"
+
+/** Query current charger state
+ *
+ * Possible return values are:
+ * - #MCE_CHARGER_STATE_UNKNOWN
+ * - #MCE_CHARGER_STATE_ON
+ * - #MCE_CHARGER_STATE_OFF
+ *
+ * @since v1.86.0
+ *
+ * @return charger state as DBUS_TYPE_STRING
+ */
+#define MCE_CHARGER_STATE_GET           "get_charger_state"
+
+/** Query current battery status
+ *
+ * Possible return values are:
+ * - #MCE_BATTERY_STATUS_UNKNOWN
+ * - #MCE_BATTERY_STATUS_FULL
+ * - #MCE_BATTERY_STATUS_OK
+ * - #MCE_BATTERY_STATUS_LOW
+ * - #MCE_BATTERY_STATUS_EMPTY
+ *
+ * @since v1.86.0
+ *
+ * @return battery status as DBUS_TYPE_STRING
+ */
+#define MCE_BATTERY_STATUS_GET          "get_battery_status"
+
+/** Query current battery level
+ *
+ * Return value is in range from 0 to 100 percent,
+ * or #MCE_BATTERY_LEVEL_UNKNOWN
+ *
+ * @since v1.86.0
+ *
+ * @return battery level as DBUS_TYPE_INT32
+ */
+#define MCE_BATTERY_LEVEL_GET           "get_battery_level"
 /*@}*/
 
 /**
@@ -617,6 +669,47 @@
  * @param val Config value as DBUS_TYPE_VARIANT
  */
 #define MCE_CONFIG_CHANGE_SIG		"config_change_ind"
+
+/** Signal that indicates that USB cable state has changed
+ *
+ * Possible arguments values are:
+ * See #MCE_USB_CABLE_STATE_GET for possible argument values
+ *
+ * @since v1.86.0
+ *
+ * @param cable_state USB cable connection state as DBUS_TYPE_STRING
+ */
+#define MCE_USB_CABLE_STATE_SIG         "usb_cable_state_ind"
+
+/** Signal that indicates that charger state has changed
+ *
+ * See #MCE_CHARGER_STATE_GET for possible argument values
+ *
+ * @since v1.86.0
+ *
+ * @param charger_state charger state as DBUS_TYPE_STRING
+ */
+#define MCE_CHARGER_STATE_SIG           "charger_state_ind"
+
+/** Signal that indicates that battery status has changed
+ *
+ * See #MCE_BATTERY_STATUS_GET for possible argument values
+ *
+ * @since v1.86.0
+ *
+ * @param battery_status battery status as DBUS_TYPE_STRING
+ */
+#define MCE_BATTERY_STATUS_SIG          "battery_status_ind"
+
+/** Signal that indicates that battery level has changed
+ *
+ * See #MCE_BATTERY_LEVEL_GET for possible argument values
+ *
+ * @since v1.86.0
+ *
+ * @param battery_level battery level as DBUS_TYPE_INT32
+ */
+#define MCE_BATTERY_LEVEL_SIG           "battery_level_ind"
 
 /*@}*/
 

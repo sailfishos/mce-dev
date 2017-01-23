@@ -258,4 +258,68 @@
  */
 #define MCE_POWERKEY_EVENT_DOUBLE_PRESS       (2u)
 
+/** USB cable state is not known
+ *
+ * @since v1.86.0
+ */
+#define MCE_USB_CABLE_STATE_UNKNOWN             "unknown"
+/** USB cable is connected
+ *
+ * @since v1.86.0
+ */
+#define MCE_USB_CABLE_STATE_CONNECTED           "connected"
+/** USB cable is disconnected
+ *
+ * @since v1.86.0
+ */
+#define MCE_USB_CABLE_STATE_DISCONNECTED        "disconnected"
+
+/** Charger state is not known
+ *
+ * @since v1.86.0
+ */
+#define MCE_CHARGER_STATE_UNKNOWN               "unknown"
+/** Charger is active
+ *
+ * @since v1.86.0
+ */
+#define MCE_CHARGER_STATE_ON                    "on"
+/** Charger is inactive
+ *
+ * @since v1.86.0
+ */
+#define MCE_CHARGER_STATE_OFF                   "off"
+
+/** Battery status is not known
+ *
+ * @since v1.86.0
+ */
+#define MCE_BATTERY_STATUS_UNKNOWN              "unknown"
+/** Battery is full
+ *
+ * @since v1.86.0
+ */
+#define MCE_BATTERY_STATUS_FULL                 "full"
+/** Battery is neither full nor empty
+ *
+ * @since v1.86.0
+ */
+#define MCE_BATTERY_STATUS_OK                   "ok"
+/** Battery is low on power
+ *
+ * @since v1.86.0
+ */
+#define MCE_BATTERY_STATUS_LOW                  "low"
+/** Battery is empty
+ *
+ * @since v1.86.0
+ */
+#define MCE_BATTERY_STATUS_EMPTY                "empty"
+
+/** Battery level percentage is not known
+ *
+ * @since v1.86.0
+ */
+#define MCE_BATTERY_LEVEL_UNKNOWN               (-1)
+
 #endif /* _MCE_MODE_NAMES_H_ */
