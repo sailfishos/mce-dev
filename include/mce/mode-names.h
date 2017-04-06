@@ -4,9 +4,14 @@
  * <p>
  * This file is part of mce-dev
  * <p>
- * Copyright © 2004-2010 Nokia Corporation and/or its subsidiary(-ies).
+ * Copyright © 2004-2011 Nokia Corporation and/or its subsidiary(-ies).
+ * Copyright (C) 2012-2017 Jolla Ltd.
  * <p>
  * @author David Weinehall <david.weinehall@nokia.com>
+ * @author Tapio Rantala <ext-tapio.rantala@nokia.com>
+ * @author Vesa Halttunen <vesa.halttunen@jollamobile.com>
+ * @author Simo Piiroinen <simo.piiroinen@jollamobile.com>
+ * @author Kimmo Lindholm <kimmo.lindholm@eke.fi>
  *
  * These headers are free software; you can redistribute them
  * and/or modify them under the terms of the GNU Lesser General Public
@@ -21,317 +26,714 @@
  * License along with these headers.
  * If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef _MCE_MODE_NAMES_H_
-#define _MCE_MODE_NAMES_H_
+#ifndef  MCE_MODE_NAMES_H_
+# define MCE_MODE_NAMES_H_
 
-/**
- * Master switch; set - radios enabled, unset - radios disabled
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Radio State Constants
  *
- * @since v1.10.60
+ *@{
  */
-#define MCE_RADIO_STATE_MASTER		(1 << 0)
-/**
- * Cellular; set - enabled, unset - disabled
- *
- * @since v1.10.60
- */
-#define MCE_RADIO_STATE_CELLULAR	(1 << 1)
-/**
- * WLAN; set - enabled, unset - disabled
- *
- * @since v1.10.60
- */
-#define MCE_RADIO_STATE_WLAN		(1 << 2)
-/**
- * Bluetooth; set - enabled, unset - disabled
- *
- * @since v1.10.60
- */
-#define MCE_RADIO_STATE_BLUETOOTH	(1 << 3)
-/**
- * NFC; set - enabled, unset - disabled
- *
- * @since v1.10.93
- */
-#define MCE_RADIO_STATE_NFC		(1 << 4)
-/**
- * FM transmitter; set - enabled, unset - disabled
- *
- * @since v1.10.93
- */
-#define MCE_RADIO_STATE_FMTX		(1 << 5)
 
-/**
- * No ongoing call
+/** Master switch; set - radios enabled, unset - radios disabled
  *
- * @since v1.8.4
- */
-#define MCE_CALL_STATE_NONE			"none"
-/**
- * Call ringing
+ * @since mce 1.10.60
  *
- * @since v1.8.29
+ * @note Effectively is an alias for connman offline mode property.
+ *       Chamges to offline mode are reflected to mce master radio
+ *       bit and vise versa.
  */
-#define MCE_CALL_STATE_RINGING			"ringing"
-/**
- * Call on-going
+# define MCE_RADIO_STATE_MASTER                  (1 << 0)
+
+/** Cellular; set - enabled, unset - disabled
  *
- * @since v1.8.29
+ * @since mce 1.10.60
+ *
+ * @note Currently this exists for backwards compatibility only.
  */
-#define MCE_CALL_STATE_ACTIVE			"active"
-/**
- * Service operation on-going
- * use to prevent calls from being initiated;
+# define MCE_RADIO_STATE_CELLULAR                (1 << 1)
+
+/** WLAN; set - enabled, unset - disabled
+ *
+ * @since mce 1.10.60
+ *
+ * @note Currently this exists for backwards compatibility only.
+ */
+# define MCE_RADIO_STATE_WLAN                    (1 << 2)
+
+/** Bluetooth; set - enabled, unset - disabled
+ *
+ * @since mce 1.10.60
+ *
+ * @note Currently this exists for backwards compatibility only.
+ */
+# define MCE_RADIO_STATE_BLUETOOTH               (1 << 3)
+
+/** NFC; set - enabled, unset - disabled
+ *
+ * @since mce 1.10.93
+ *
+ * @note Currently this exists for backwards compatibility only.
+ */
+# define MCE_RADIO_STATE_NFC                     (1 << 4)
+
+/** FM transmitter; set - enabled, unset - disabled
+ *
+ * @since mce 1.10.93
+ *
+ * @note Currently this exists for backwards compatibility only.
+ */
+# define MCE_RADIO_STATE_FMTX                    (1 << 5)
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Call State Constants
+ *
+ *@{
+ */
+
+/** No ongoing call
+ *
+ * @since mce 1.8.4
+ */
+# define MCE_CALL_STATE_NONE                     "none"
+
+/** Call ringing
+ *
+ * @since mce 1.8.29
+ */
+# define MCE_CALL_STATE_RINGING                  "ringing"
+
+/** Call on-going
+ *
+ * @since mce 1.8.29
+ */
+# define MCE_CALL_STATE_ACTIVE                   "active"
+
+/** Service operation on-going
+ *
+ * @since mce 1.8.29
+ *
+ * @deprecated No longer in active use.
+ *
+ * Use to prevent calls from being initiated;
  * will not prevent emergency calls
- *
- * @since v1.8.29
  */
-#define MCE_CALL_STATE_SERVICE			"service"
+# define MCE_CALL_STATE_SERVICE                  "service"
 
-/**
- * Normal call
- *
- * @since v1.8.4
- */
-#define MCE_NORMAL_CALL				"normal"
-/**
- * Emergency call
- *
- * @since v1.8.4
- */
-#define MCE_EMERGENCY_CALL			"emergency"
+/*@}*/
 
-/**
- * Touchscreen/Keypad locked
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Call Type Constants
  *
- * @since v1.4.5
+ *@{
  */
-#define MCE_TK_LOCKED				"locked"
-/**
- * Touchscreen/Keypad silently locked
- *
- * @since v1.4.15
- */
-#define MCE_TK_SILENT_LOCKED			"silent-locked"
-/**
- * Touchscreen/Keypad locked with fadeout
- *
- * @since v1.4.15
- */
-#define MCE_TK_LOCKED_DIM			"locked-dim"
-/**
- * Touchscreen/Keypad locked with delay
- *
- * @since v1.12.2
- */
-#define MCE_TK_LOCKED_DELAY			"locked-delay"
-/**
- * Touchscreen/Keypad silently locked with fadeout
- *
- * @since v1.4.15
- */
-#define MCE_TK_SILENT_LOCKED_DIM		"silent-locked-dim"
-/**
- * Touchscreen/Keypad unlocked
- *
- * @since v1.4.5
- */
-#define MCE_TK_UNLOCKED				"unlocked"
-/**
- * Touchscreen/Keypad silently unlocked
- *
- * @since v1.6.33
- */
-#define MCE_TK_SILENT_UNLOCKED			"silent-unlocked"
 
-/**
- * Display state name for display on
+/** Normal call
  *
- * @since v1.5.21
+ * @since mce 1.8.4
  */
-#define MCE_DISPLAY_ON_STRING			"on"
-/**
- * Display state name for display dim
+# define MCE_NORMAL_CALL                         "normal"
+
+/** Emergency call
  *
- * @since v1.5.21
+ * @since mce 1.8.4
  */
-#define MCE_DISPLAY_DIM_STRING			"dimmed"
-/**
- * Display state name for display off
+# define MCE_EMERGENCY_CALL                      "emergency"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Touchscreen And Keypad Lock State Constants
  *
- * @since v1.5.21
+ *@{
  */
-#define MCE_DISPLAY_OFF_STRING			"off"
+
+/** Touchscreen/Keypad locked
+ *
+ * @since mce 1.4.5
+ */
+# define MCE_TK_LOCKED                           "locked"
+
+/** Touchscreen/Keypad silently locked
+ *
+ * @since mce 1.4.15
+ *
+ * @deprecated Handled as an alias for #MCE_TK_LOCKED
+ */
+# define MCE_TK_SILENT_LOCKED                    "silent-locked"
+
+/** Touchscreen/Keypad locked with fadeout
+ *
+ * @since mce 1.4.15
+ *
+ * @deprecated Handled as an alias for #MCE_TK_LOCKED
+ */
+# define MCE_TK_LOCKED_DIM                       "locked-dim"
+
+/** Touchscreen/Keypad locked with delay
+ *
+ * @since mce 1.12.2
+ *
+ * @deprecated Handled as an alias for #MCE_TK_LOCKED
+ */
+# define MCE_TK_LOCKED_DELAY                     "locked-delay"
+
+/** Touchscreen/Keypad silently locked with fadeout
+ *
+ * @since mce 1.4.15
+ *
+ * @deprecated Handled as an alias for #MCE_TK_LOCKED
+ */
+# define MCE_TK_SILENT_LOCKED_DIM                "silent-locked-dim"
+
+/** Touchscreen/Keypad unlocked
+ *
+ * @since mce 1.4.5
+ */
+# define MCE_TK_UNLOCKED                         "unlocked"
+
+/** Touchscreen/Keypad silently unlocked
+ *
+ * @since mce 1.6.33
+ *
+ * @deprecated Handled as an alias for #MCE_TK_UNLOCKED
+ */
+# define MCE_TK_SILENT_UNLOCKED                  "silent-unlocked"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Display State Constants
+ *
+ *@{
+ */
+
+/** Display state name for display on
+ *
+ * @since mce 1.5.21
+ */
+# define MCE_DISPLAY_ON_STRING                   "on"
+
+/** Display state name for display dim
+ *
+ * @since mce 1.5.21
+ */
+# define MCE_DISPLAY_DIM_STRING                  "dimmed"
+
+/** Display state name for display off
+ *
+ * @since mce 1.5.21
+ */
+# define MCE_DISPLAY_OFF_STRING                  "off"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Blank Prevention State Constants
+ *
+ *@{
+ */
 
 /** Blank prevent state name for active
  *
- * @since v1.51.0
+ * @since mce 1.51.0
  */
-#define MCE_PREVENT_BLANK_ACTIVE_STRING		"active"
+# define MCE_PREVENT_BLANK_ACTIVE_STRING         "active"
+
 /** Blank prevent state name for inactive
  *
- * @since v1.51.0
+ * @since mce 1.51.0
  */
-#define MCE_PREVENT_BLANK_INACTIVE_STRING	"inactive"
+# define MCE_PREVENT_BLANK_INACTIVE_STRING       "inactive"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Blanking Inhibit State Constants
+ *
+ *@{
+ */
 
 /** Blank inhibit state name for active
  *
- * @since v1.51.0
+ * @since mce 1.51.0
  */
-#define MCE_INHIBIT_BLANK_ACTIVE_STRING		"active"
+# define MCE_INHIBIT_BLANK_ACTIVE_STRING         "active"
+
 /** Blank inhibit state name for inactive
  *
- * @since v1.51.0
+ * @since mce 1.51.0
  */
-#define MCE_INHIBIT_BLANK_INACTIVE_STRING	"inactive"
+# define MCE_INHIBIT_BLANK_INACTIVE_STRING       "inactive"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Blanking Policy State Constants
+ *
+ *@{
+ */
 
 /** Default blanking policy active
  *
- * @since v1.55.0
+ * @since mce 1.55.0
  */
-#define MCE_BLANKING_POLICY_DEFAULT_STRING      "default"
+# define MCE_BLANKING_POLICY_DEFAULT_STRING      "default"
 
 /** Default blanking policy disabled due to notifications
  *
- * @since v1.55.0
+ * @since mce 1.55.0
  */
-#define MCE_BLANKING_POLICY_NOTIFICATION_STRING "notification"
+# define MCE_BLANKING_POLICY_NOTIFICATION_STRING "notification"
 
 /** Default blanking policy disabled due to alarm dialog state
  *
- * @since v1.55.0
+ * @since mce 1.55.0
  */
-#define MCE_BLANKING_POLICY_ALARM_STRING        "alarm"
+# define MCE_BLANKING_POLICY_ALARM_STRING        "alarm"
 
 /** Default blanking policy disabled due to call state
  *
- * @since v1.55.0
+ * @since mce 1.55.0
  */
-#define MCE_BLANKING_POLICY_CALL_STRING         "call"
+# define MCE_BLANKING_POLICY_CALL_STRING         "call"
 
 /** Default blanking policy is about to be restored
  *
- * @since v1.55.0
+ * @since mce 1.55.0
  */
-#define MCE_BLANKING_POLICY_LINGER_STRING       "linger"
+# define MCE_BLANKING_POLICY_LINGER_STRING       "linger"
 
-/**
- * CABC name for CABC disabled
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name CABC Mode Constants
  *
- * @since v1.8.88
+ *@{
  */
-#define MCE_CABC_MODE_OFF			"off"
-/**
- * CABC name for UI mode
+
+/** CABC name for CABC disabled
  *
- * @since v1.8.88
+ * @since mce 1.8.88
  */
-#define MCE_CABC_MODE_UI			"ui"
-/**
- * CABC name for still image mode
+# define MCE_CABC_MODE_OFF                       "off"
+
+/** CABC name for UI mode
  *
- * @since v1.8.88
+ * @since mce 1.8.88
  */
-#define MCE_CABC_MODE_STILL_IMAGE		"still-image"
-/**
- * CABC name for moving image mode
+# define MCE_CABC_MODE_UI                        "ui"
+
+/** CABC name for still image mode
  *
- * @since v1.8.88
+ * @since mce 1.8.88
  */
-#define MCE_CABC_MODE_MOVING_IMAGE		"moving-image"
-/**
- * POWERKEY EVENT for single powerkey press
+# define MCE_CABC_MODE_STILL_IMAGE               "still-image"
+
+/** CABC name for moving image mode
  *
- * @since v1.10.54
+ * @since mce 1.8.88
  */
-#define MCE_POWERKEY_EVENT_SHORT_PRESS        (0u)
-/**
- * POWERKEY EVENT for long powerkey press
+# define MCE_CABC_MODE_MOVING_IMAGE              "moving-image"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Power Key Trigger Constants
  *
- * @since v1.10.54
+ *@{
  */
-#define MCE_POWERKEY_EVENT_LONG_PRESS         (1u)
-/**
- * POWERKEY EVENT for double powerkey press
+
+/** Simulate single powerkey press
  *
- * @since v1.10.54
+ * @since mce 1.10.54
  */
-#define MCE_POWERKEY_EVENT_DOUBLE_PRESS       (2u)
+# define MCE_POWERKEY_EVENT_SHORT_PRESS          (0u)
+
+/** Simulate long powerkey press
+ *
+ * @since mce 1.10.54
+ */
+# define MCE_POWERKEY_EVENT_LONG_PRESS           (1u)
+
+/** Simulate double powerkey press
+ *
+ * @since mce 1.10.54
+ */
+# define MCE_POWERKEY_EVENT_DOUBLE_PRESS         (2u)
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name USB Cable State Constants
+ *
+ *@{
+ */
 
 /** USB cable state is not known
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_USB_CABLE_STATE_UNKNOWN             "unknown"
+# define MCE_USB_CABLE_STATE_UNKNOWN             "unknown"
+
 /** USB cable is connected
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_USB_CABLE_STATE_CONNECTED           "connected"
+# define MCE_USB_CABLE_STATE_CONNECTED           "connected"
+
 /** USB cable is disconnected
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_USB_CABLE_STATE_DISCONNECTED        "disconnected"
+# define MCE_USB_CABLE_STATE_DISCONNECTED        "disconnected"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Charger State Constants
+ *
+ *@{
+ */
 
 /** Charger state is not known
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_CHARGER_STATE_UNKNOWN               "unknown"
+# define MCE_CHARGER_STATE_UNKNOWN               "unknown"
+
 /** Charger is active
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_CHARGER_STATE_ON                    "on"
+# define MCE_CHARGER_STATE_ON                    "on"
+
 /** Charger is inactive
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_CHARGER_STATE_OFF                   "off"
+# define MCE_CHARGER_STATE_OFF                   "off"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Battery Status Constants
+ *
+ *@{
+ */
 
 /** Battery status is not known
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_BATTERY_STATUS_UNKNOWN              "unknown"
+# define MCE_BATTERY_STATUS_UNKNOWN              "unknown"
+
 /** Battery is full
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_BATTERY_STATUS_FULL                 "full"
+# define MCE_BATTERY_STATUS_FULL                 "full"
+
 /** Battery is neither full nor empty
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_BATTERY_STATUS_OK                   "ok"
+# define MCE_BATTERY_STATUS_OK                   "ok"
+
 /** Battery is low on power
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_BATTERY_STATUS_LOW                  "low"
+# define MCE_BATTERY_STATUS_LOW                  "low"
+
 /** Battery is empty
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_BATTERY_STATUS_EMPTY                "empty"
+# define MCE_BATTERY_STATUS_EMPTY                "empty"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Battery Level Constants
+ *
+ *@{
+ */
 
 /** Battery level percentage is not known
  *
- * @since v1.86.0
+ * @since mce 1.86.0
  */
-#define MCE_BATTERY_LEVEL_UNKNOWN               (-1)
+# define MCE_BATTERY_LEVEL_UNKNOWN               (-1)
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Input Policy State Constants
+ *
+ *@{
+ */
 
 /** Input events should be processed normally
  *
- * @since v1.87.0
+ * @since mce 1.87.0
  */
-#define MCE_INPUT_POLICY_ENABLED                "enabled"
+# define MCE_INPUT_POLICY_ENABLED                "enabled"
 
 /** Input events should be ignored
  *
- * @since v1.87.0
+ * @since mce 1.87.0
  */
-#define MCE_INPUT_POLICY_DISABLED               "disabled"
+# define MCE_INPUT_POLICY_DISABLED               "disabled"
 
-#endif /* _MCE_MODE_NAMES_H_ */
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Hardware Keyboard Availability Constants
+ *
+ *@{
+ */
+
+/** Hardware Keyboard availability is not known
+ *
+ * @since mce 1.39.0
+ */
+# define MCE_HARDWARE_KEYBOARD_UNDEF             "undef"
+
+/** Hardware Keyboard is available
+ *
+ * @since mce 1.39.0
+ */
+# define MCE_HARDWARE_KEYBOARD_AVAILABLE         "available"
+
+/** Hardware Keyboard is not available
+ *
+ * @since mce 1.39.0
+ */
+# define MCE_HARDWARE_KEYBOARD_NOT_AVAILABLE     "not-available"
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Feedback Event Name Constants
+ *
+ *@{
+ */
+
+/** Notify that an application should handle powerkey press
+ *
+ * @since mce 1.26.0
+ *
+ * Normally MCE handles powerkey presses internally, however
+ * there are some exceptions - for example  during alarms and
+ * incoming calls - where reacting to power key press is
+ * delegated to application ui relevant to the context.
+ *
+ * See:
+ * - #MCE_ALARM_UI_FEEDBACK_SIG
+ * - #MCE_CALL_UI_FEEDBACK_SIG
+ */
+# define MCE_FEEDBACK_EVENT_POWERKEY             "powerkey"
+
+/** Notify that an application should handle device flipover
+ *
+ * @since mce 1.26.0
+ *
+ * While there are incoming calls or ringing alarms, MCE does
+ * device flipover detection. Reacting to such "sensor gestures"
+ * is delegated to application ui relevant to the context.
+ *
+ * See:
+ * - #MCE_ALARM_UI_FEEDBACK_SIG
+ * - #MCE_CALL_UI_FEEDBACK_SIG
+ */
+# define MCE_FEEDBACK_EVENT_FLIPOVER             "flipover"
+
+/** Request lockscreen ui to switch to device unlock view
+ *
+ * @since mce 1.37.0
+ *
+ * When MCE bumps into situation where removing tklock is
+ * requested while device is locked, it asks ui to switch
+ * into device unlock view instead of deactivating tklock.
+ *
+ * See:
+ * - #MCE_POWER_BUTTON_TRIGGER
+ *
+ * @note The "double-power-key" value is just unfortunate
+ *       historical artefact that can't be changed without
+ *       causing a D-Bus API break.
+ */
+# define MCE_FEEDBACK_EVENT_UNLOCK               "double-power-key"
+
+/** Notify lipstick about homekey presses
+ *
+ * @since mce 1.82.0
+ *
+ * Artefact from tk7001 adaptation: The fingerprint sensor
+ * doubles as home key. To facilitate "wakeup display and
+ * activate fingerprint sensor" type activity homekey
+ * handling is divided in two parts: 1st mce subjects the
+ * press to similar unblanking rules as what is done to
+ * the powerkey and then after/when display is powered up
+ * reaction to the homekey is delegated to lipstick.
+ *
+ * See:
+ * - #MCE_POWER_BUTTON_TRIGGER
+ */
+# define MCE_FEEDBACK_EVENT_HOMEKEY              "home-key"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Sliding Keyboard Availability Constants
+ *
+ * Used for example in evaluating whether virtual keyboard
+ * should be used or not.
+ *
+ * See:
+ * - #MCE_SLIDING_KEYBOARD_STATE_GET
+ * - #MCE_SLIDING_KEYBOARD_STATE_SIG
+ *
+ *@{
+ */
+
+/** Sliding Keyboard state is not known
+ *
+ * @since mce 1.39.0
+ */
+# define MCE_SLIDING_KEYBOARD_UNDEF              "undef"
+
+/** Sliding Keyboard is opened
+ *
+ * @since mce 1.39.0
+ */
+# define MCE_SLIDING_KEYBOARD_OPEN               "open"
+
+/** Sliding Keyboard is closed
+ *
+ * @since mce 1.39.0
+ */
+# define MCE_SLIDING_KEYBOARD_CLOSED             "closed"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Display Low Power Mode Constants
+ *
+ *@{
+ */
+
+/** Display Low Power Mode is Enabled
+ *
+ * @since mce 1.30.0
+ */
+# define MCE_LPM_UI_ENABLED                      "enabled"
+
+/** Display Low Power Mode is Disabled
+ *
+ * @since mce 1.30.0
+ */
+# define MCE_LPM_UI_DISABLED                     "disabled"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name System Memory Pressure Constants
+ *
+ *@{
+ */
+
+/** System memory use is at normal level
+ *
+ * @since mce 1.35.0
+ */
+# define MCE_MEMORY_LEVEL_NORMAL                 "normal"
+
+/** System memory use is above normal level
+ *
+ * @since mce 1.35.0
+ *
+ * Signifies: Unnecesary resources should be released.
+ */
+# define MCE_MEMORY_LEVEL_WARNING                "warning"
+
+/** System memory use is at critical level
+ *
+ * @since mce 1.35.0
+ *
+ * Signifies: Unnecessary processes should exit. Non-critical
+ * processes can be expected to get terminated by kernel side
+ * out of memory killer.
+ */
+# define MCE_MEMORY_LEVEL_CRITICAL               "critical"
+
+/** System memory use can't be evaluated
+ *
+ * @since mce 1.35.0
+ *
+ * Signifies: Kernel does not provide memnotify interface
+ * and/or memory use limits have not been defined in mce
+ * configuration.
+ */
+# define MCE_MEMORY_LEVEL_UNKNOWN                "unknown"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** TKLock status replies from SystemUI
+ *
+ *@{
+ */
+
+/** TKLock was unlocked by the user
+ *
+ * @since mce 1.10.92 (legacy)
+ */
+# define TKLOCK_UNLOCK                           1
+/** TKLock unlock attempt failed
+ *
+ * @since mce 1.10.92 (legacy)
+ *
+ * @deprecated Ignored by MCE
+ */
+# define TKLOCK_RETRY                            2
+
+/** Attempt to open TKLock timed out
+ *
+ * @since mce 1.10.92 (legacy)
+ *
+ * @deprecated Ignored by MCE
+ */
+# define TKLOCK_TIMEOUT                          3
+/** TKLock closed on request from mce
+ *
+ * @since mce 1.10.92 (legacy)
+ */
+# define TKLOCK_CLOSED                           4
+
+/*@}*/
+
+#endif /* MCE_MODE_NAMES_H_ */
