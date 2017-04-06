@@ -790,4 +790,59 @@
 
 /*@}*/
 
+/**
+ * @name Input policy D-Bus methods and signals
+ */
+
+/*@{*/
+
+/** Get current touch screen input policy
+ *
+ * Possible return values are:
+ * - #MCE_INPUT_POLICY_ENABLED
+ * - #MCE_INPUT_POLICY_DISABLED
+ *
+ * @since v1.87.0
+ *
+ * @return input policy as DBUS_TYPE_STRING
+ */
+#define MCE_TOUCH_INPUT_POLICY_GET      "get_touch_input_policy"
+
+/** Indication for change of touch screen input policy
+ *
+ * Possible values are:
+ * - #MCE_INPUT_POLICY_ENABLED
+ * - #MCE_INPUT_POLICY_DISABLED
+ *
+ * @since v1.87.0
+ *
+ * @param input policy as DBUS_TYPE_STRING
+ */
+#define MCE_TOUCH_INPUT_POLICY_SIG      "touch_input_policy_ind"
+
+/** Get current volume key input policy
+ *
+ * Possible return values are:
+ * - #MCE_INPUT_POLICY_ENABLED
+ * - #MCE_INPUT_POLICY_DISABLED
+ *
+ * @since v1.87.0
+ *
+ * @return input policy as DBUS_TYPE_STRING
+ */
+#define MCE_VOLKEY_INPUT_POLICY_GET     "get_keypad_input_policy"
+
+/** Indication for change of volume key input policy
+ *
+ * Possible values are:
+ * - #MCE_INPUT_POLICY_ENABLED
+ * - #MCE_INPUT_POLICY_DISABLED
+ *
+ * @since v1.87.0
+ *
+ * @param input policy as DBUS_TYPE_STRING
+ */
+#define MCE_VOLKEY_INPUT_POLICY_SIG     "keypad_input_policy_ind"
+
+/*@}*/
 #endif /* _MCE_DBUS_NAMES_H_ */

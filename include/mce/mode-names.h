@@ -322,4 +322,16 @@
  */
 #define MCE_BATTERY_LEVEL_UNKNOWN               (-1)
 
+/** Input events should be processed normally
+ *
+ * @since v1.87.0
+ */
+#define MCE_INPUT_POLICY_ENABLED                "enabled"
+
+/** Input events should be ignored
+ *
+ * @since v1.87.0
+ */
+#define MCE_INPUT_POLICY_DISABLED               "disabled"
+
 #endif /* _MCE_MODE_NAMES_H_ */
