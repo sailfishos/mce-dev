@@ -1,3 +1,9 @@
+mce-dev (1.22.0) unstable; urgency=low
+
+  * [mce] Add input policy related D-Bus constants. JB#38001
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Mon, 10 Apr 2017 15:22:37 +0300
+
 mce-dev (1.21.0) unstable; urgency=low
 
   * [mce] Expose battery/charging data on D-Bus. Contributes to JB#37422

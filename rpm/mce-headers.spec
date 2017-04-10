@@ -1,6 +1,6 @@
 Name:       mce-headers
 Summary:    Development files for mce
-Version:    1.21.0
+Version:    1.22.0
 Release:    1
 Group:      Development/Libraries
 License:    LGPLv2
@@ -25,6 +25,7 @@ provided by the Mode Control Entity, and the signals emitted by it.
 %setup -q -n %{name}-%{version}
 
 %build
+./verify_version
 make %{?jobs:-j%jobs}
 make doc
 
