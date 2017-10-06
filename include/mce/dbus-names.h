@@ -845,4 +845,44 @@
 #define MCE_VOLKEY_INPUT_POLICY_SIG     "keypad_input_policy_ind"
 
 /*@}*/
+
+/**
+ * @name Button backlight policy D-Bus methods and signals
+ */
+
+/*@{*/
+
+/** Get current button backlight state
+ *
+ * Returns true when button backlight is lit, false otherwise.
+ *
+ * @since v1.90.0
+ *
+ * @return button backlight state as DBUS_TYPE_BOOLEAN
+ */
+#define MCE_BUTTON_BACKLIGHT_GET        "get_button_backlight"
+
+/** Request button backlight state change
+ *
+ * The button backlight is lit when policy permits is, at least one
+ * D-Bus client has requested it, and the required control file
+ * configuration has been provided.
+ *
+ * @since v1.90.0
+ *
+ * @param state DBUS_TYPE_BOOLEAN
+ */
+#define MCE_BUTTON_BACKLIGHT_CHANGE_REQ "req_button_backlight_change"
+
+/** Indication for change of button backlight state
+ *
+ * The state is true when button backlight is lit, false otherwise.
+ *
+ * @since v1.90.0
+ *
+ * @param state button backlight state as DBUS_TYPE_BOOLEAN
+ */
+#define MCE_BUTTON_BACKLIGHT_SIG        "sig_button_backlight_ind"
+
+/*@}*/
 #endif /* _MCE_DBUS_NAMES_H_ */

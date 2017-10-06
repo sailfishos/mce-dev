@@ -1,3 +1,9 @@
+mce-dev (1.23.0) unstable; urgency=low
+
+  * [mce] Add button backlight policy related D-Bus constants. JB#39838
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Fri, 06 Oct 2017 06:35:37 +0300
+
 mce-dev (1.22.0) unstable; urgency=low
 
   * [mce] Add input policy related D-Bus constants. JB#38001
