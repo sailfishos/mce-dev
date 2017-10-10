@@ -26,7 +26,7 @@ provided by the Mode Control Entity, and the signals emitted by it.
 
 %build
 ./verify_version
-make %{?jobs:-j%jobs}
+make %{?_smp_mflags}
 make doc
 
 %install
