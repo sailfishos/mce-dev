@@ -5,38 +5,68 @@
 # Author: David Weinehall <david.weinehall@nokia.com>
 # Modified by: Ilya Dogolazky, Tuomo Tanskanen
 
-INSTALL_DIR := install -d
+# ----------------------------------------------------------------------------
+# TOP LEVEL TARGETS
+# ----------------------------------------------------------------------------
+
+.PHONY: build doc install clean distclean mostlyclean
+
+build::
+
+doc::
+
+install::
+
+mostlyclean::
+	$(RM) *.bak *~
+	$(RM) mce/include/*.bak mce/include/*~
+
+clean:: mostlyclean
+
+distclean:: clean
+
+# ----------------------------------------------------------------------------
+# INSTALL CONFIG
+# ----------------------------------------------------------------------------
+
+DESTDIR    ?= /tmp/test-mce-dev
+
+PCDIR      := /usr/lib/pkgconfig
+INCLUDEDIR := /usr/include/mce
+
+INSTALL_DIR  := install --mode=755 --directory
 INSTALL_DATA := install --mode=644
 
-DOXYGEN := doxygen
 
-PCDIR := $(DESTDIR)/usr/lib/pkgconfig
-INCLUDEDIR := $(DESTDIR)/usr/include/mce
+# ----------------------------------------------------------------------------
+# FILES TO BUILD / INSTALL
+# ----------------------------------------------------------------------------
 
-TOPDIR := $(shell /bin/pwd)
-INCDIR := $(TOPDIR)/include/mce
-DOCDIR := $(TOPDIR)/doc
+PCFILE  += mce.pc
+INCLUDE_FILES += include/mce/dbus-names.h
+INCLUDE_FILES += include/mce/mode-names.h
 
-PCFILE  := mce.pc
-INCLUDE_FILES := $(INCDIR)/dbus-names.h $(INCDIR)/mode-names.h
+# ----------------------------------------------------------------------------
+# DOCUMENTATION RULES
+# ----------------------------------------------------------------------------
 
-.PHONY: doc
-doc:	doc/warnings
+doc::	doc/doxygen.log
 
-doc/warnings: $(INCLUDE_FILES) Doxyfile
-	@if [ ! -d "$(DOCDIR)" ]; then mkdir "$(DOCDIR)"; fi
-	@$(DOXYGEN) 2> $(TOPDIR)/doc/warnings > /dev/null
+doc/doxygen.log: $(INCLUDE_FILES) Doxyfile
+	mkdir -p doc
+	doxygen 1> $@ # stdout=noise stderr=warnings
 
-clean:
-	@if [ x"$(DOCDIR)" != x"" ]; then	\
-		rm -rf "$(DOCDIR)";		\
-	fi
+clean::
+	$(RM) -rf doc
 
-.PHONY: install
-install: doc
-	$(INSTALL_DIR) $(PCDIR) $(INCLUDEDIR)				&&\
-	$(INSTALL_DATA) $(PCFILE) $(PCDIR)				&&\
-	$(INSTALL_DATA) $(INCLUDE_FILES) $(INCLUDEDIR)
+# ----------------------------------------------------------------------------
+# INSTALL RULES
+# ----------------------------------------------------------------------------
 
-.PHONY: distclean
-distclean: clean
+install::
+	# package config files
+	$(INSTALL_DIR) $(DESTDIR)$(PCDIR)
+	$(INSTALL_DATA) $(PCFILE) $(DESTDIR)$(PCDIR)/
+	# header files
+	$(INSTALL_DIR) $(DESTDIR)$(INCLUDEDIR)
+	$(INSTALL_DATA) $(INCLUDE_FILES) $(DESTDIR)$(INCLUDEDIR)
