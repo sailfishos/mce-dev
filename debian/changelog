@@ -1,3 +1,14 @@
+mce-dev (1.24.0) unstable; urgency=low
+
+  * [rpmbuild] Use _smp_mflags instead of jobs macro
+  * [makefile] Do not silence doxygen warnings
+  * [doxygen] Remove obsolete settings that cause warnings
+  * [doxygen] Do not sort member docs
+  * [doxygen] Do not scan the whole source tree
+  * [mce] Add missing methods and signals. MER#1854
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Fri, 24 Nov 2017 12:08:00 +0200
+
 mce-dev (1.23.0) unstable; urgency=low
 
   * [mce] Add button backlight policy related D-Bus constants. JB#39838
