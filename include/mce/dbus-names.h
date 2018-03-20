@@ -356,8 +356,20 @@
  *
  * @since mce 0.5
  *
- * If display is on and lockscreen is not active, normal blanking
- * timers are stopped for 60 seconds.
+ * Normal blanking timers are stopped for 60 seconds - under roughly
+ * the following conditions:
+ *
+ * - Display is already on and lockscreen is not active
+ *
+ * - Display is already on, lockscreen is active but
+ *   compositor has notified that user interaction is expected
+ *   and the blanking prevent request originates from the same
+ *   process that owns the topmost window on screen.
+ *
+ * The exact details are subject to change and clients showld
+ * track #MCE_PREVENT_BLANK_ALLOWED_SIG signals to know when
+ * making blank prevention calls are allowed/ignored (and query
+ * the initial state with #MCE_PREVENT_BLANK_ALLOWED_GET).
  *
  * To keep display from blanking for longer periods, the client
  * needs to re-issue this call every 60 seconds.
@@ -365,9 +377,15 @@
  * When application no longer wishes to keep display from blanking,
  * it should make a #MCE_CANCEL_PREVENT_BLANK_REQ method call.
  *
- * @note If client drops from the system bus, it is handled as if
- *       the client would have made a #MCE_CANCEL_PREVENT_BLANK_REQ
- *       call.
+ * @note If client drops from the system bus, or misses the 60 second
+ *       renew period, it is handled as if the client would have made
+ *       a #MCE_CANCEL_PREVENT_BLANK_REQ method call.
+ *
+ * @note Previously mce waited exactly 60 seconds for renew calls
+ *       which meant clients had to use shorter than 60 second
+ *       renew periods to avoid hiccups. Since mce >= 1.93.0
+ *       the hard limit is 65 seconds and thus clients can schedule
+ *       renewing to occur once / 60 seconds.
  */
 # define MCE_PREVENT_BLANK_REQ             "req_display_blanking_pause"
 
@@ -396,6 +414,26 @@
  * - #MCE_PREVENT_BLANK_INACTIVE_STRING
  */
 # define MCE_PREVENT_BLANK_SIG             "display_blanking_pause_ind"
+
+/** Query whether MCE_PREVENT_BLANK_REQ request can be made
+ *
+ * @since 1.93.0
+ *
+ * See #MCE_PREVENT_BLANK_REQ for details.
+ *
+ * @return boolean: true for allowed, false for not allowed
+ */
+# define MCE_PREVENT_BLANK_ALLOWED_GET     "get_display_blanking_pause_allowed"
+
+/** Notify change in whether MCE_PREVENT_BLANK_REQ request can be made
+ *
+ * @since 1.93.0
+ *
+ * See #MCE_PREVENT_BLANK_REQ for details.
+ *
+ * @param boolean: true for allowed, false for not allowed
+ */
+# define MCE_PREVENT_BLANK_ALLOWED_SIG     "display_blanking_pause_allowed_ind"
 
 /*@}*/
 
