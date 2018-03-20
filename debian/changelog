@@ -1,3 +1,9 @@
+mce-dev (1.25.0) unstable; urgency=low
+
+  * [mce] Add blanking pause related D-Bus constants. JB#41340
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Tue, 20 Mar 2018 10:07:37 +0200
+
 mce-dev (1.24.0) unstable; urgency=low
 
   * [rpmbuild] Use _smp_mflags instead of jobs macro
