@@ -736,4 +736,31 @@
 
 /*@}*/
 
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Button backlight operation modes
+ *
+ *@{
+ */
+
+/** Button backlight should be turned off
+ *
+ * @since mce 1.98.0
+ */
+#define MCE_BUTTON_BACKLIGHT_MODE_OFF    0
+
+/** Button backlight should be turned on
+ *
+ * @since mce 1.98.0
+ */
+#define MCE_BUTTON_BACKLIGHT_MODE_ON     1
+
+/** Button backlight should be turned on/off according to policy
+ *
+ * @since mce 1.98.0
+ */
+#define MCE_BUTTON_BACKLIGHT_MODE_POLICY 2
+
+/*@}*/
+
 #endif /* MCE_MODE_NAMES_H_ */
