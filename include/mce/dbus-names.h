@@ -1031,6 +1031,21 @@
  */
 # define MCE_BUTTON_BACKLIGHT_CHANGE_REQ   "req_button_backlight_change"
 
+/** Request button backlight mode change
+ *
+ * @since mce 1.98.0
+ *
+ * For use from the CSD application button backlight verification test.
+ *
+ * Allows bypassing of the button backlight policy and explicitly turn
+ * the backlight on or off.
+ *
+ * @param mode int32: #MCE_BUTTON_BACKLIGHT_MODE_OFF,
+ *                    #MCE_BUTTON_BACKLIGHT_MODE_ON, or
+ *                    #MCE_BUTTON_BACKLIGHT_MODE_POLICY
+ */
+# define MCE_BUTTON_BACKLIGHT_MODE_REQ     "req_button_backlight_mode"
+
 /** Indication for change of button backlight state
  *
  * @since mce 1.90.0

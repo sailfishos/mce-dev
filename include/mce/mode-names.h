@@ -703,7 +703,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-/** TKLock status replies from SystemUI
+/** @name TKLock status replies from SystemUI
  *
  *@{
  */
@@ -733,6 +733,33 @@
  * @since mce 1.10.92 (legacy)
  */
 # define TKLOCK_CLOSED                           4
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Button backlight operation modes
+ *
+ *@{
+ */
+
+/** Button backlight should be turned off
+ *
+ * @since mce 1.98.0
+ */
+#define MCE_BUTTON_BACKLIGHT_MODE_OFF    0
+
+/** Button backlight should be turned on
+ *
+ * @since mce 1.98.0
+ */
+#define MCE_BUTTON_BACKLIGHT_MODE_ON     1
+
+/** Button backlight should be turned on/off according to policy
+ *
+ * @since mce 1.98.0
+ */
+#define MCE_BUTTON_BACKLIGHT_MODE_POLICY 2
 
 /*@}*/
 
