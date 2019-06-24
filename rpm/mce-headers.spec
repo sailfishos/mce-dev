@@ -4,7 +4,7 @@ Version:    1.26.0
 Release:    1
 Group:      Development/Libraries
 License:    LGPLv2
-URL:        https://github.com/nemomobile/mce-dev
+URL:        https://git.sailfishos.org/mer-core/mce-dev
 Source0:    %{name}-%{version}.tar.bz2
 BuildRequires:  doxygen
 
