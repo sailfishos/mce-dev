@@ -1,3 +1,9 @@
+mce-dev (1.26.1) unstable; urgency=low
+
+  * [mce-dev] fix url. Contributes to JB#33684
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Tue, 25 Jun 2019 10:11:01 +0300
+
 mce-dev (1.26.0) unstable; urgency=low
 
   * [mce] Add D-Bus constants for button backlight mode. JB#42094
