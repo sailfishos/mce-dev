@@ -5,7 +5,8 @@
  * This file is part of mce-dev
  * <p>
  * Copyright © 2004-2011 Nokia Corporation and/or its subsidiary(-ies).
- * Copyright (C) 2013-2017 Jolla Ltd.
+ * Copyright (C) 2013-2019 Jolla Ltd.
+ * Copyright (c) 2019 Open Mobile Platform LLC.
  * <p>
  * @author David Weinehall <david.weinehall@nokia.com>
  * @author Santtu Lakkala <ext-santtu.1.lakkala@nokia.com>
@@ -861,6 +862,36 @@
  * @param bettery_level int32: battery level percent, or #MCE_BATTERY_LEVEL_UNKNOWN
  */
 # define MCE_BATTERY_LEVEL_SIG             "battery_level_ind"
+
+/** Query current charger type
+ *
+ * @since mce 1.102.0
+ *
+ * @return string: current charger type, one of:
+ * - #MCE_CHARGER_TYPE_NONE
+ * - #MCE_CHARGER_TYPE_USB
+ * - #MCE_CHARGER_TYPE_DCP
+ * - #MCE_CHARGER_TYPE_HVDCP
+ * - #MCE_CHARGER_TYPE_CDP
+ * - #MCE_CHARGER_TYPE_WIRELESS
+ * - #MCE_CHARGER_TYPE_OTHER
+ */
+# define MCE_CHARGER_TYPE_GET             "get_charger_type"
+
+/** Signal that indicates that charger type has changed
+ *
+ * @since mce 1.102.0
+ *
+ * @param charger_type string: current charger type, one of:
+ * - #MCE_CHARGER_TYPE_NONE
+ * - #MCE_CHARGER_TYPE_USB
+ * - #MCE_CHARGER_TYPE_DCP
+ * - #MCE_CHARGER_TYPE_HVDCP
+ * - #MCE_CHARGER_TYPE_CDP
+ * - #MCE_CHARGER_TYPE_WIRELESS
+ * - #MCE_CHARGER_TYPE_OTHER
+ */
+# define MCE_CHARGER_TYPE_SIG             "charger_type_ind"
 
 /*@}*/
 

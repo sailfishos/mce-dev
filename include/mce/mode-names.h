@@ -5,7 +5,8 @@
  * This file is part of mce-dev
  * <p>
  * Copyright © 2004-2011 Nokia Corporation and/or its subsidiary(-ies).
- * Copyright (C) 2012-2017 Jolla Ltd.
+ * Copyright (C) 2012-2019 Jolla Ltd.
+ * Copyright (c) 2019 Open Mobile Platform LLC.
  * <p>
  * @author David Weinehall <david.weinehall@nokia.com>
  * @author Tapio Rantala <ext-tapio.rantala@nokia.com>
@@ -427,6 +428,57 @@
  * @since mce 1.86.0
  */
 # define MCE_CHARGER_STATE_OFF                   "off"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Charger Type Constants
+ *
+ *@{
+ */
+
+/** No charger is active
+ *
+ * @since mce 1.102.0
+ */
+# define MCE_CHARGER_TYPE_NONE                   "none"
+
+/** Standard down port (pc/hub) charger is active
+ *
+ * @since mce 1.102.0
+ */
+# define MCE_CHARGER_TYPE_USB                    "usb"
+
+/** Dedicated charging port (wall) charger is active
+ *
+ * @since mce 1.102.0
+ */
+# define MCE_CHARGER_TYPE_DCP                    "dcp"
+
+/** High voltage DCP charger is active
+ *
+ * @since mce 1.102.0
+ */
+# define MCE_CHARGER_TYPE_HVDCP                  "hvdcp"
+
+/** Charging Downstream Port charger is active
+ *
+ * @since mce 1.102.0
+ */
+# define MCE_CHARGER_TYPE_CDP                    "cdp"
+
+/** Wireless charger is active
+ *
+ * @since mce 1.102.0
+ */
+# define MCE_CHARGER_TYPE_WIRELESS               "wireless"
+
+/** Other kind of charger is active
+ *
+ * @since mce 1.102.0
+ */
+# define MCE_CHARGER_TYPE_OTHER                  "other"
 
 /*@}*/
 
