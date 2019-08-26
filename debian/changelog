@@ -1,3 +1,9 @@
+mce-dev (1.27.0) unstable; urgency=low
+
+  * [mce] Add charger type D-Bus constants. JB#38667
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Mon, 26 Aug 2019 09:36:42 +0300
+
 mce-dev (1.26.1) unstable; urgency=low
 
   * [mce-dev] fix url. Contributes to JB#33684

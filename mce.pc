@@ -3,7 +3,7 @@ includedir=${prefix}/include
 
 Name: mce
 Description: Mode Control Entity
-Version: 1.26.1
+Version: 1.27.0
 Requires:
 Libs:
 Cflags: -I${includedir}
