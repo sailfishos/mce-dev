@@ -486,6 +486,8 @@
 /////////////////////////////////////////////////////////////////////////////
 /** @name Battery Status Constants
  *
+ * These values match legacy maemo (bme) battery status values.
+ *
  *@{
  */
 
@@ -518,6 +520,55 @@
  * @since mce 1.86.0
  */
 # define MCE_BATTERY_STATUS_EMPTY                "empty"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Battery State Constants
+ *
+ * These values match linux power supply device status values.
+ *
+ *@{
+ */
+
+/** Battery state is not known
+ *
+ * @since mce 1.104.0
+ */
+# define MCE_BATTERY_STATE_UNKNOWN               "unknown"
+
+/** Battery is currently discharging
+ *
+ * Charger is disconnected, battery is discharging.
+ *
+ * @since mce 1.104.0
+ */
+# define MCE_BATTERY_STATE_DISCHARGING           "discharging"
+
+/** Battery is currently charging
+ *
+ * Charger is connected, battery is charging.
+ *
+ * @since mce 1.104.0
+ */
+# define MCE_BATTERY_STATE_CHARGING              "charging"
+
+/** Battery is not getting charged
+ *
+ * Charger is connected, battery is not getting charged.
+ *
+ * @since mce 1.104.0
+ */
+# define MCE_BATTERY_STATE_NOT_CHARGING          "not_charging"
+
+/** Battery is fully charged
+ *
+ * Charger is connected, battery is full.
+ *
+ * @since mce 1.104.0
+ */
+# define MCE_BATTERY_STATE_FULL                  "full"
 
 /*@}*/
 

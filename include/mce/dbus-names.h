@@ -847,6 +847,32 @@
  */
 # define MCE_BATTERY_STATUS_SIG            "battery_status_ind"
 
+/** Query current battery state
+ *
+ * @since mce 1.104.0
+ *
+ * @return string: current battery state, one of:
+ * - #MCE_BATTERY_STATE_UNKNOWN
+ * - #MCE_BATTERY_STATE_CHARGING
+ * - #MCE_BATTERY_STATE_DISCHARGING
+ * - #MCE_BATTERY_STATE_NOT_CHARGING
+ * - #MCE_BATTERY_STATE_FULL
+ */
+#define MCE_BATTERY_STATE_GET              "get_battery_state"
+
+/** Signal that indicates that battery state has changed
+ *
+ * @since mce 1.104.0
+ *
+ * @param battery_state string: current battery state, one of:
+ * - #MCE_BATTERY_STATE_UNKNOWN
+ * - #MCE_BATTERY_STATE_CHARGING
+ * - #MCE_BATTERY_STATE_DISCHARGING
+ * - #MCE_BATTERY_STATE_NOT_CHARGING
+ * - #MCE_BATTERY_STATE_FULL
+ */
+#define MCE_BATTERY_STATE_SIG              "battery_state_ind"
+
 /** Query current battery level
  *
  * @since mce 1.86.0
