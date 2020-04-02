@@ -34,8 +34,8 @@ DESTDIR    ?= /tmp/test-mce-dev
 PCDIR      := /usr/lib/pkgconfig
 INCLUDEDIR := /usr/include/mce
 
-INSTALL_DIR  := install --mode=755 --directory
-INSTALL_DATA := install --mode=644
+INSTALL_DIR  := install -m 755 -d
+INSTALL_DATA := install -m 644
 
 
 # ----------------------------------------------------------------------------
