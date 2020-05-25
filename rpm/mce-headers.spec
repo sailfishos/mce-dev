@@ -31,7 +31,7 @@ make doc
 
 %install
 rm -rf %{buildroot}
-%make_install
+make install PCDIR=%{_libdir}/pkgconfig DESTDIR=%{?buildroot}
 install -d %{buildroot}/%{_docdir}/mce-doc/html/
 install -m 644 doc/html/* %{buildroot}/%{_docdir}/mce-doc/html/
 

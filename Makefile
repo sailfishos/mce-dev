@@ -31,7 +31,7 @@ distclean:: clean
 
 DESTDIR    ?= /tmp/test-mce-dev
 
-PCDIR      := /usr/lib/pkgconfig
+PCDIR      ?= /usr/lib/pkgconfig
 INCLUDEDIR := /usr/include/mce
 
 INSTALL_DIR  := install -m 755 -d
