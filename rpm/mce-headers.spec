@@ -6,6 +6,7 @@ Group:      Development/Libraries
 License:    LGPLv2
 URL:        https://git.sailfishos.org/mer-core/mce-dev
 Source0:    %{name}-%{version}.tar.bz2
+BuildArch:  noarch
 BuildRequires:  doxygen
 
 %description
