@@ -636,6 +636,32 @@
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/** @name Hardware Mouse Availability Constants
+ *
+ *@{
+ */
+
+/** Hardware Mouse availability is not known
+ *
+ * @since mce 1.109.0
+ */
+# define MCE_HARDWARE_MOUSE_UNDEF                "undef"
+
+/** Hardware Mouse is available
+ *
+ * @since mce 1.109.0
+ */
+# define MCE_HARDWARE_MOUSE_AVAILABLE            "available"
+
+/** Hardware Mouse is not available
+ *
+ * @since mce 1.109.0
+ */
+# define MCE_HARDWARE_MOUSE_NOT_AVAILABLE        "not-available"
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 /** @name Feedback Event Name Constants
  *
  *@{

@@ -1155,6 +1155,44 @@
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/** @name Hardware Mouse Availability
+ *
+ *@{
+ */
+
+/** Query HW mouse availability
+ *
+ * @since mce 1.109.0
+ *
+ * Mouse present
+ *
+ * Used for example in evaluating whether mouse pointer
+ * should be shown or not.
+ *
+ * @return string: availability state, one of:
+ * - #MCE_HARDWARE_MOUSE_UNDEF
+ * - #MCE_HARDWARE_MOUSE_AVAILABLE
+ * - #MCE_HARDWARE_MOUSE_NOT_AVAILABLE
+ */
+# define MCE_HARDWARE_MOUSE_STATE_GET      "mouse_available_state_req"
+
+/** Notify changes in HW mouse availability
+ *
+ * @since mce 1.109.0
+ *
+ * Mouse present
+ *
+ * @return string: availability state, one of:
+ * - #MCE_HARDWARE_MOUSE_UNDEF
+ * - #MCE_HARDWARE_MOUSE_AVAILABLE
+ * - #MCE_HARDWARE_MOUSE_NOT_AVAILABLE
+ */
+# define MCE_HARDWARE_MOUSE_STATE_SIG      "mouse_available_state_ind"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 /** @name Sliding Keyboard State
  *
  *@{
