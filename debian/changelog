@@ -1,3 +1,9 @@
+mce-dev (1.29.0) unstable; urgency=low
+
+  * [mce] Add mouse availability state D-Bus constants. JB#55866
+
+ -- Simo Piiroinen <simo.piiroinen@jolla.com>  Mon, 25 Oct 2021 18:09:15 +0300
+
 mce-dev (1.28.3) unstable; urgency=low
 
   * [mce-dev] Set rpm build arch to noarch
