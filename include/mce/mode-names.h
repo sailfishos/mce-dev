@@ -4,8 +4,8 @@
  * <p>
  * This file is part of mce-dev
  * <p>
- * Copyright © 2004-2011 Nokia Corporation and/or its subsidiary(-ies).
- * Copyright (C) 2012-2019 Jolla Ltd.
+ * Copyright (c) 2004 - 2011 Nokia Corporation and/or its subsidiary(-ies).
+ * Copyright (c) 2012 - 2022 Jolla Ltd.
  * Copyright (c) 2019 Open Mobile Platform LLC.
  * <p>
  * @author David Weinehall <david.weinehall@nokia.com>
@@ -480,6 +480,32 @@
  */
 # define MCE_CHARGER_TYPE_OTHER                  "other"
 
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Charging Hysteresis State Constants
+ *
+ *@{
+ */
+
+/** Charging hysteresis policy state is not known
+ *
+ * @since mce 1.110.0
+ */
+# define MCE_CHARGING_STATE_UNKNOWN              "unknown"
+
+/** Charging hysteresis policy allows charging
+ *
+ * @since mce 1.110.0
+ */
+# define MCE_CHARGING_STATE_ENABLED              "enabled"
+
+/** Charging hysteresis policy denies charging
+ *
+ * @since mce 1.110.0
+ */
+# define MCE_CHARGING_STATE_DISABLED             "disabled"
 /*@}*/
 
 /////////////////////////////////////////////////////////////////////////////

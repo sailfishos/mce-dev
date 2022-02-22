@@ -4,8 +4,8 @@
  * <p>
  * This file is part of mce-dev
  * <p>
- * Copyright © 2004-2011 Nokia Corporation and/or its subsidiary(-ies).
- * Copyright (C) 2013-2019 Jolla Ltd.
+ * Copyright (c) 2004 - 2011 Nokia Corporation and/or its subsidiary(-ies).
+ * Copyright (c) 2013 - 2022 Jolla Ltd.
  * Copyright (c) 2019 Open Mobile Platform LLC.
  * <p>
  * @author David Weinehall <david.weinehall@nokia.com>
@@ -918,6 +918,30 @@
  * - #MCE_CHARGER_TYPE_OTHER
  */
 # define MCE_CHARGER_TYPE_SIG             "charger_type_ind"
+
+/** Query current charging hysteresis state
+ *
+ * @since mce 1.110.0
+ *
+ * @return string: charging hysteresis policy state, one of:
+ * - #MCE_CHARGING_STATE_UNKNOWN
+ * - #MCE_CHARGING_STATE_ENABLED
+ * - #MCE_CHARGING_STATE_DISABLED
+ */
+# define MCE_CHARGING_STATE_GET           "get_charging_state"
+
+/** Signal that indicates that charging hysteresis state has changed
+ *
+ * Charging hysteresis policy decision.
+ *
+ * @since mce 1.110.0
+ *
+ * @param string: charging hysteresis policy state, one of:
+ * - #MCE_CHARGING_STATE_UNKNOWN
+ * - #MCE_CHARGING_STATE_ENABLED
+ * - #MCE_CHARGING_STATE_DISABLED
+ */
+# define MCE_CHARGING_STATE_SIG           "charging_state_ind"
 
 /*@}*/
 
