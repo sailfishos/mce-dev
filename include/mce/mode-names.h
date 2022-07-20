@@ -484,6 +484,38 @@
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/** @name Charging Hysteresis Mode Constants
+ *
+ *@{
+ */
+
+/** Charging hysteresis policy is to keep charger enabled (default behavior)
+ *
+ * @since mce 1.112.0
+ */
+# define MCE_CHARGING_MODE_ENABLE               "enable"
+
+/** Charging hysteresis policy is to keep charger disabled
+ *
+ * @since mce 1.112.0
+ */
+# define MCE_CHARGING_MODE_DISABLE              "disable"
+
+/** Charging hysteresis policy is to apply thresholds
+ *
+ * @since mce 1.112.0
+ */
+# define MCE_CHARGING_MODE_APPLY_THRESHOLDS     "apply-thresholds"
+
+/** Charging hysteresis policy is to apply thresholds once fully charged
+ *
+ * @since mce 1.112.0
+ */
+# define MCE_CHARGING_MODE_APPLY_THRESHOLDS_AFTER_FULL  "apply-thresholds-after-full"
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 /** @name Charging Hysteresis State Constants
  *
  *@{

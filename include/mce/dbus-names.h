@@ -919,6 +919,98 @@
  */
 # define MCE_CHARGER_TYPE_SIG             "charger_type_ind"
 
+/** Query current charging hysteresis mode
+ *
+ * @since mce 1.112.0
+ *
+ * @return string: charging hysteresis policy state, one of:
+ * - #MCE_CHARGING_MODE_DISABLE
+ * - #MCE_CHARGING_MODE_ENABLE
+ * - #MCE_CHARGING_MODE_APPLY_THRESHOLDS
+ * - #MCE_CHARGING_MODE_APPLY_THRESHOLDS_AFTER_FULL
+ */
+# define MCE_CHARGING_MODE_GET           "get_charging_mode"
+
+/** Set charging hysteresis mode
+ *
+ * @since mce 1.112.0
+ *
+ * @param string: charging hysteresis policy mode, one of:
+ * - #MCE_CHARGING_MODE_DISABLE
+ * - #MCE_CHARGING_MODE_ENABLE
+ * - #MCE_CHARGING_MODE_APPLY_THRESHOLDS
+ * - #MCE_CHARGING_MODE_APPLY_THRESHOLDS_AFTER_FULL
+ *
+ * @return boolean: success, or error reply in case of failure
+ */
+# define MCE_CHARGING_MODE_SET           "set_charging_mode"
+
+/** Signal that indicates that charging hysteresis mode has changed
+ *
+ * Charging hysteresis policy decision.
+ *
+ * @since mce 1.112.0
+ *
+ * @param string: charging hysteresis policy mode, one of:
+ * - #MCE_CHARGING_MODE_DISABLE
+ * - #MCE_CHARGING_MODE_ENABLE
+ * - #MCE_CHARGING_MODE_APPLY_THRESHOLDS
+ * - #MCE_CHARGING_MODE_APPLY_THRESHOLDS_AFTER_FULL
+ */
+# define MCE_CHARGING_MODE_SIG           "charging_mode_ind"
+
+/** Query current charging hysteresis limit to enable charging
+ *
+ * @since mce 1.112.0
+ *
+ * @return int: charging hysteresis limit to enable charging
+ */
+# define MCE_CHARGING_LIMIT_ENABLE_GET   "get_charging_limit_enable"
+
+/** Set charging hysteresis limit to enable charging
+ *
+ * @since mce 1.112.0
+ *
+ * @param int: charging hysteresis limit to enable charging
+ *
+ * @return boolean: success, or error reply in case of failure
+ */
+# define MCE_CHARGING_LIMIT_ENABLE_SET   "set_charging_limit_enable"
+
+/** Signal that indicates that charging hysteresis limit to enable charging has changed
+ *
+ * @since mce 1.112.0
+ *
+ * @param int: charging hysteresis limit to enable charging
+ */
+# define MCE_CHARGING_LIMIT_ENABLE_SIG   "charging_limit_enable_ind"
+
+/** Query current charging hysteresis limit to disable charging
+ *
+ * @since mce 1.112.0
+ *
+ * @return int: charging hysteresis limit to disable charging
+ */
+# define MCE_CHARGING_LIMIT_DISABLE_GET   "get_charging_limit_disable"
+
+/** Set charging hysteresis limit to disable charging
+ *
+ * @since mce 1.112.0
+ *
+ * @param int: charging hysteresis limit to disable charging
+ *
+ * @return boolean: success, or error reply in case of failure
+ */
+# define MCE_CHARGING_LIMIT_DISABLE_SET   "set_charging_limit_disable"
+
+/** Signal that indicates that charging hysteresis limit to disable charging has changed
+ *
+ * @since mce 1.112.0
+ *
+ * @param int: charging hysteresis limit to disable charging
+ */
+# define MCE_CHARGING_LIMIT_DISABLE_SIG   "charging_limit_disable_ind"
+
 /** Query current charging hysteresis state
  *
  * @since mce 1.110.0
