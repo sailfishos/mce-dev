@@ -510,6 +510,32 @@
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/** @name Charge-once-to-full policy override constants
+ *
+ *@{
+ */
+
+/** Charge-once-to-full policy override state is not known
+ *
+ * @since mce 1.112.0
+ */
+# define MCE_FORCED_CHARGING_UNKNOWN              "unknown"
+
+/** Charge-once-to-full policy override has been activated
+ *
+ * @since mce 1.112.0
+ */
+# define MCE_FORCED_CHARGING_ENABLED              "enabled"
+
+/** Charge-once-to-full policy override has been deactivated
+ *
+ * @since mce 1.112.0
+ */
+# define MCE_FORCED_CHARGING_DISABLED             "disabled"
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 /** @name Battery Status Constants
  *
  * These values match legacy maemo (bme) battery status values.
