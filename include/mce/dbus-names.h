@@ -943,7 +943,45 @@
  */
 # define MCE_CHARGING_STATE_SIG           "charging_state_ind"
 
+/** Query charge-once-to-full policy override state
+ *
+ * @since mce 1.112.0
+ *
+ * @return string: charge-once-to-full policy override state, one of:
+ * - #MCE_FORCED_CHARGING_UNKNOWN
+ * - #MCE_FORCED_CHARGING_ENABLED
+ * - #MCE_FORCED_CHARGING_DISABLED
+ */
+# define MCE_FORCED_CHARGING_GET           "get_forced_charging"
+
+/** Request charge-once-to-full policy override state change
+ *
+ * @since mce 1.112.0
+ * 
+ * @note Override is automatically disabled if / when
+ *       battery is full or charger is disconnected.
+ *
+ * @param value string: override state, one of:
+ * - #MCE_FORCED_CHARGING_ENABLED
+ * - #MCE_FORCED_CHARGING_DISABLED
+ */
+# define MCE_FORCED_CHARGING_REQ           "req_forced_charging"
+
+/** Signal that indicates that charge-once-to-full policy override state has changed
+ *
+ * Charge-once-to-full policy override decision.
+ *
+ * @since mce 1.112.0
+ *
+ * @param string: charge-once-to-full policy state, one of:
+ * - #MCE_FORCED_CHARGING_UNKNOWN
+ * - #MCE_FORCED_CHARGING_ENABLED
+ * - #MCE_FORCED_CHARGING_DISABLED
+ */
+# define MCE_FORCED_CHARGING_SIG           "forced_charging_ind"
+
 /*@}*/
+
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
