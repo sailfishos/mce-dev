@@ -1,6 +1,6 @@
 Name:       mce-headers
 Summary:    Development files for mce
-Version:    1.30.0
+Version:    1.31.0
 Release:    1
 Group:      Development/Libraries
 License:    LGPLv2

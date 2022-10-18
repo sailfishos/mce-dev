@@ -1,3 +1,9 @@
+mce-dev (1.31.0) unstable; urgency=low
+
+  * [mce] Add forced charging D-Bus constants. JB#58372
+
+ -- Simo Piiroinen <simo.piiroinen@jolla.com>  Tue, 18 Oct 2022 10:47:06 +0300
+
 mce-dev (1.30.0) unstable; urgency=low
 
   * [mce] Add charging hysteresis state D-Bus constants. JB#40062
