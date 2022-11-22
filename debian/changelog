@@ -1,3 +1,9 @@
+mce-dev (1.32.0) unstable; urgency=low
+
+  * [mce] Add charging suspendable dbus constant. JB#59152
+
+ -- Simo Piiroinen <simo.piiroinen@jolla.com>  Tue, 22 Nov 2022 14:22:52 +0200
+
 mce-dev (1.31.0) unstable; urgency=low
 
   * [mce] Add forced charging D-Bus constants. JB#58372
