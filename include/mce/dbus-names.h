@@ -980,6 +980,19 @@
  */
 # define MCE_FORCED_CHARGING_SIG           "forced_charging_ind"
 
+/** Query whether charging can be suspended on this device
+ *
+ * @since mce 1.113.0
+ *
+ * @note As this is a matter of static configuration, the value
+ *       returned does not change during mce runtime and thus
+ *       there is related change signal.
+ *
+ * @return boolean: true if mce can be enable/disable charging, or
+ *                  false if not
+ */
+# define MCE_CHARGING_SUSPENDABLE_GET      "get_charging_suspendable"
+
 /*@}*/
 
 
