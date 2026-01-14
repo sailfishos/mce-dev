@@ -1,10 +1,9 @@
 Name:       mce-headers
 Summary:    Development files for mce
-Version:    1.32.0
+Version:    1.32.1
 Release:    1
-Group:      Development/Libraries
 License:    LGPLv2
-URL:        https://git.sailfishos.org/mer-core/mce-dev
+URL:        https://github.com/sailfishos/mce-dev
 Source0:    %{name}-%{version}.tar.bz2
 BuildArch:  noarch
 BuildRequires:  doxygen
@@ -15,7 +14,6 @@ provided by the Mode Control Entity, and the signals emitted by it.
 
 %package -n mce-doc
 Summary:    Documentation files for mce D-Bus API
-Group:      Documentation
 BuildArch:  noarch
 
 %description -n mce-doc
@@ -27,22 +25,19 @@ provided by the Mode Control Entity, and the signals emitted by it.
 
 %build
 ./verify_version
-make %{?_smp_mflags}
+%make_build
 make doc
 
 %install
-rm -rf %{buildroot}
 make install PCDIR=%{_libdir}/pkgconfig DESTDIR=%{?buildroot}
 install -d %{buildroot}/%{_docdir}/mce-doc/html/
 install -m 644 doc/html/* %{buildroot}/%{_docdir}/mce-doc/html/
 
 %files
-%defattr(-,root,root,-)
 %doc COPYING debian/copyright
 %{_includedir}/mce/*.h
 %{_libdir}/pkgconfig/mce.pc
 
 %files -n mce-doc
-%defattr(-,root,root,-)
 %doc COPYING debian/changelog debian/copyright
 %{_docdir}/mce-doc/html/*
