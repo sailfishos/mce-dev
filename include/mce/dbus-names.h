@@ -545,6 +545,21 @@
  */
 # define MCE_KEY_BACKLIGHT_STATE_GET       "get_key_backlight_state"
 
+/** Request keypad backlight mode change
+ *
+ * @since mce 1.119.0
+ *
+ * For use from the CSD application keypad backlight verification test.
+ *
+ * Allows bypassing of the keypad backlight policy and explicitly turn
+ * the backlight on or off.
+ *
+ * @param mode int32: #MCE_KEYPAD_BACKLIGHT_MODE_OFF,
+ *                    #MCE_KEYPAD_BACKLIGHT_MODE_ON, or
+ *                    #MCE_KEYPAD_BACKLIGHT_MODE_POLICY
+ */
+# define MCE_KEYPAD_BACKLIGHT_MODE_REQ     "req_keypad_backlight_mode"
+
 /*@}*/
 
 /////////////////////////////////////////////////////////////////////////////
