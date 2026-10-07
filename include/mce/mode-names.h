@@ -944,4 +944,31 @@
 
 /*@}*/
 
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Keypad backlight operation modes
+ *
+ *@{
+ */
+
+/** Keypad backlight should be turned off
+ *
+ * @since mce 1.119.0
+ */
+#define MCE_KEYPAD_BACKLIGHT_MODE_OFF    0
+
+/** Keypad backlight should be turned on
+ *
+ * @since mce 1.119.0
+ */
+#define MCE_KEYPAD_BACKLIGHT_MODE_ON     1
+
+/** Keypad backlight should be turned on/off according to policy
+ *
+ * @since mce 1.119.0
+ */
+#define MCE_KEYPAD_BACKLIGHT_MODE_POLICY 2
+
+/*@}*/
+
 #endif /* MCE_MODE_NAMES_H_ */
