@@ -1357,6 +1357,8 @@
  * @param event  string: event name, such as:
  * - #MCE_FEEDBACK_EVENT_POWERKEY
  * - #MCE_FEEDBACK_EVENT_FLIPOVER
+ * - #MCE_FEEDBACK_EVENT_LID_OPENED
+ * - #MCE_FEEDBACK_EVENT_LID_CLOSED
  */
 # define MCE_ALARM_UI_FEEDBACK_SIG         "alarm_ui_feedback_ind"
 
@@ -1369,6 +1371,8 @@
  * @param event  string: event name, such as:
  * - #MCE_FEEDBACK_EVENT_POWERKEY
  * - #MCE_FEEDBACK_EVENT_FLIPOVER
+ * - #MCE_FEEDBACK_EVENT_LID_OPENED
+ * - #MCE_FEEDBACK_EVENT_LID_CLOSED
  */
 # define MCE_CALL_UI_FEEDBACK_SIG          "call_ui_feedback_ind"
 

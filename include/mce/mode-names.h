@@ -748,6 +748,34 @@
  */
 # define MCE_FEEDBACK_EVENT_FLIPOVER             "flipover"
 
+/** Notify that an application should handle lid opened
+ *
+ * @since mce 1.120.0
+ *
+ * Normally MCE handles reaction to lid open internally.
+ * However, if there are incoming / active calls or alarms,
+ * also call ui and/or alarm ui applications can be notified.
+ *
+ * See:
+ * - #MCE_ALARM_UI_FEEDBACK_SIG
+ * - #MCE_CALL_UI_FEEDBACK_SIG
+ */
+# define MCE_FEEDBACK_EVENT_LID_OPENED           "lid_opened"
+
+/** Notify that an application should handle lid close
+ *
+ * @since mce 1.120.0
+ *
+ * Normally MCE handles reaction to lid close internally.
+ * However, if there are incoming / active calls or alarms,
+ * also call ui and/or alarm ui applications can be notified.
+ *
+ * See:
+ * - #MCE_ALARM_UI_FEEDBACK_SIG
+ * - #MCE_CALL_UI_FEEDBACK_SIG
+ */
+# define MCE_FEEDBACK_EVENT_LID_CLOSED           "lid_closed"
+
 /** Request lockscreen ui to switch to device unlock view
  *
  * @since mce 1.37.0
