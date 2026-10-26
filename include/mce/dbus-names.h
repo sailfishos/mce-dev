@@ -972,7 +972,7 @@
 /** Request charge-once-to-full policy override state change
  *
  * @since mce 1.112.0
- * 
+ *
  * @note Override is automatically disabled if / when
  *       battery is full or charger is disconnected.
  *
@@ -1009,7 +1009,6 @@
 # define MCE_CHARGING_SUSPENDABLE_GET      "get_charging_suspendable"
 
 /*@}*/
-
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
