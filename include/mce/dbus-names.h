@@ -972,7 +972,7 @@
 /** Request charge-once-to-full policy override state change
  *
  * @since mce 1.112.0
- * 
+ *
  * @note Override is automatically disabled if / when
  *       battery is full or charger is disconnected.
  *
@@ -1009,7 +1009,6 @@
 # define MCE_CHARGING_SUSPENDABLE_GET      "get_charging_suspendable"
 
 /*@}*/
-
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
@@ -1657,6 +1656,28 @@
  * - #MCE_POWERKEY_EVENT_DOUBLE_PRESS
  */
 # define MCE_TRIGGER_POWERKEY_EVENT_REQ    "req_trigger_powerkey_event"
+
+/** Request that MCE ignores one power key press
+ *
+ * For use from the CSD application key verification test.
+ * Keeps MCE from blanking display when test asks user to press power key.
+ *
+ * Ignores one power key press and release. Can be canceled with
+ * #MCE_RESTORE_POWERKEY_PROCESSING_REQ.
+ *
+ * @since mce 1.121.0
+ */
+# define MCE_SUPRESS_POWERKEY_PROCESSING_REQ    "req_suppress_power_key_processing"
+
+/** Request that MCE ignores one power key press
+ *
+ * For use from the CSD application key verification test.
+ *
+ * Restores normal power key processing.
+ *
+ * @since mce 1.121.0
+ */
+# define MCE_RESTORE_POWERKEY_PROCESSING_REQ    "req_restore_power_key_processing"
 
 /** Get amount of time spent in each display state
  *
