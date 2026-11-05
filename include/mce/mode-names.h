@@ -688,6 +688,32 @@
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/** @name LID Sensor State Constants
+ *
+ *@{
+ */
+
+/** LID sensor is ignored / state is not known
+ *
+ * @since mce 1.122.0
+ */
+# define MCE_LID_SENSOR_UNDEF                    "undef"
+
+/** LID sensor is open
+ *
+ * @since mce 1.122.0
+ */
+# define MCE_LID_SENSOR_OPEN                     "open"
+
+/** LID sensor is closed
+ *
+ * @since mce 1.122.0
+ */
+# define MCE_LID_SENSOR_CLOSED                   "closed"
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 /** @name Hardware Mouse Availability Constants
  *
  *@{

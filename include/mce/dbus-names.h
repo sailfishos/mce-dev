@@ -1244,6 +1244,49 @@
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/** @name Filtered LID sensor state
+ *
+ *@{
+ */
+
+/** Query LID sensor state
+ *
+ * @since mce 1.122.0
+ *
+ * LID sensor state after MCE side settings and filtering has been taken
+ * into account.
+ *
+ * Intended use is applications / services that do not have traditional
+ * UI and which should be active only when lid is closed.
+ *
+ * @return string: LID sensor state, one of:
+ * - #MCE_LID_SENSOR_UNDEF
+ * - #MCE_LID_SENSOR_OPEN
+ * - #MCE_LID_SENSOR_CLOSED
+ */
+# define MCE_LID_SENSOR_FILTERED_STATE_GET   "get_lid_sensor_filtered_state"
+
+/** Notify changes in LID sensor state
+ *
+ * @since mce 1.122.0
+ *
+ * LID sensor state after MCE side settings and filtering has been taken
+ * into account.
+ *
+ * Intended use is applications / services that do not have traditional
+ * UI and which should be active only when lid is closed.
+ *
+ * @return string: LID sensor state, one of:
+ * - #MCE_LID_SENSOR_UNDEF
+ * - #MCE_LID_SENSOR_OPEN
+ * - #MCE_LID_SENSOR_CLOSED
+ */
+# define MCE_LID_SENSOR_FILTERED_STATE_SIG   "lid_sensor_filtered_state_ind"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 /** @name Hardware Mouse Availability
  *
  *@{
