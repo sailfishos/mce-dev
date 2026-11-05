@@ -1,6 +1,6 @@
 Name:       mce-headers
 Summary:    Development files for mce
-Version:    1.35.0
+Version:    1.36.0
 Release:    1
 License:    LGPLv2
 URL:        https://github.com/sailfishos/mce-dev

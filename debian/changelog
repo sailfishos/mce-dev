@@ -1,3 +1,9 @@
+mce-dev (1.36.0) unstable; urgency=low
+
+  * [mce] Add LID sensor related D-Bus constants. JB#65395
+
+ -- Simo Piiroinen <simo.piiroinen@jolla.com>  Thu, 05 Nov 2026 14:29:40 +0200
+
 mce-dev (1.35.0) unstable; urgency=low
 
   * [mce] Add D-Bus constants for suppressing power key temporarily. JB#65638
